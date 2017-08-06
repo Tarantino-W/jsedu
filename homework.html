@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        *{margin: 0;padding:0;}
+        ul,li{list-style: none;}
+        html,body{font-size: 15px;font-family: "宋体";}
+		/* 抬头 */
+		.title{/* border: 1px solid red; */width: 1280px;height: 35px;background: #353535;color: white;margin:0 auto;}
+		.left_box{float: left;}
+		.right_box{float: right;}
+		.left p{text-align: center;line-height: 35px;margin-left: 70px;}
+		.right{line-height: 35px;margin-right: 40px;}
+		/* 标题 */
+		.biaoti{/* border: 1px solid red; */width: 1280px;height: 115px;margin: 0 auto;}
+		.biaoti .logo{float: left;margin-left: 70px}
+		.biaoti .search{float: right;margin-top:10px;margin-right: 70px;}
+		/* 导航 */
+		.nav{/* border: 1px solid red; */width: 1280px;height: 35px;line-height: 35px;margin:0 auto;background: #0B7722}
+		.nav ul{float: left;margin-left: 110px;font-weight: bold;font-size: 15px;}
+		.nav ul a{text-decoration: none;color: white}
+		/* 主体 */
+		.main{width:997px;margin: 0 auto;position: relative;}
+		.main .zuo{width: 718px;float: left;}
+		.main .zuo .shang div{float: left; margin-top: 15px;}
+		.shang .laba p{/* border: 1px solid blue; */height: 20px;font-size: 13px;line-height: 20px;}
+		.shang .wenzi p{/* border: 1px solid red; */height: 20px;font-size: 10px;color: grey;line-height: 20px}
+		.mian .you{width: 279px;float: right;position: relative;}
+		.you img{display: block;margin-bottom: 5px}
+		.you .youtu{float: left;position: relative;margin:15px 0 0 10px;}
+		.you .zuotu{float: left;position: relative;margin:15px 0 0 15px;}
+		.main .top:after{width: 100%;display: block;clear: both;content:""}
+
+		.mleft{width: 262px;float: left;}
+		.mleft_top .list_zi{width: 262px;height:30px;/* border: 1px solid red; */line-height: 30px;margin-top: 20px;}
+		.mleft .list_zi .zuozi{font-size: 20px;font-weight: bold;color: #5BA46D;float: left;}
+		.mleft .list_zi .youzi a{font-size: 10px;color: blue;float:right;text-decoration: none;right: 0;bottom: 0}
+		.list{border: 1px solid #DDDDDD;width: 262px;height: 267px;}
+		.newlist .list{float: left;}
+		.newlist .list li {font-size: 12px;margin:20px 10px;color: #7B7B7B}
+		.newlist .list li a{text-decoration: none;color: #7B7B7B}
+		.mleft .list li span{float: right;}
+		.mleft_down img{margin: 20px auto;}
+		.mleft:after{width: 100%;display: block;clear: both;content:""}
+
+		.mright{width: 722px;float: right;}
+		.mright_up .xsjz .word{width: 722px;height:30px;font-size: 20px;font-weight: bold;color: #5BA46D;float: left;line-height: 30px;margin-left: 10px;margin-top:20px;border-bottom: 3px solid #E5E5E5;}
+		.mright_up .xsjz .example {width: 722px;height:140px;}
+		.mright_up .example{font-size: 15px;margin: 0 10px;float: left;}
+		.mright_up .example li{text-align: center;margin:20px 0;}
+		.mright_up .example li a{text-decoration: none;color: #545454}
+		.mright_up .xsjz:after{width: 100%;display: block;clear: both;content:""}
+
+		.mright_down .zhaopin .zpbt{width: 722px;height: 34px;line-height: 34px;border-bottom: 1px solid #E39240}
+		.mright_down .zhaopin .zpbt .btzuo a{float: left;width:177px;text-align: center;font-weight: bold;text-decoration: none;color: black;background:#E39240;color: white}
+		.mright_down .zhaopin .zpbt .btyou a{float: left;width:177px;text-align: center;font-weight: bold;text-decoration: none;color: black;}
+		.mright_down .zhaopin .zplist{width:722px;height: 244px;border: 1px solid #DDDDDD;margin-top: 10px;}
+		.zplist{line-height: 40px;}
+		.zplist .fenlei{font-weight: bold;font-size: 13px;color: #626262;width: 100px;height: 40px;text-align: center;}
+		.zplist .xuanxiang{font-size: 13px;color: #626262;float: left;}
+		.mright .zhaopin:after{width: 100%;display: block;clear: both;content:""}
+		.main .middle:after{width: 100%;display: block;clear: both;content:""}
+		
+		.lbottom .lbzi{line-height: 35px;margin: 20px 0;}
+		.lbl{font-size: 20px;font-weight: bold;color: #5BA46D;float: left;}
+		.lbr a{font-size: 10px;color: blue;float:right;text-decoration: none;right: 0;bottom: 0}
+		.lbzi:after{width: 100%;display: block;clear: both;content:""}
+		.main:after{width: 100%;display: block;clear: both;content:""}
+
+		
+		.lbmain ul{margin: 30px 0;}
+		.lbmain .bt{font-size: 16px;font-weight: bold;}
+		.lbmain .beizhu{font-size: 10px;color: #A4A4A4;border-bottom: 1px solid #E5E5E5;}
+		.lbmain span{background: url(images/list.png);width:29px;height: 29px;font-size: 20px;display: block;float: left;}
+		.lbmain li a{text-decoration: none;color: black;}
+		.lbdown{text-align: center;}
+		.lbdown img{display: inline-block;margin: 0px 0 20px 0;}
+
+
+		.lbtu .zltj{border:0px solid #FA8F01;background: #FA8F01;line-height: 40px;}
+		.lbtu .zltj p{color: white;margin-left: 10px;}
+		.lbtu{border: 2px solid #FA8F01}
+		.lbtp img{width:90%}
+		.lbtp .lbtpz{float: left;}
+		.lbtp .lbtpy{float: right;display: block;}
+		.lbtu:after{width: 100%;display: block;clear: both;content:""}
+		
+		.qiuzhi{margin: 20px 30px;}
+		.qiuzhi .xuhao{font-weight: bold;font-size: 15px;float: left;}
+		.qiuzhi td{margin:10px 20px;float: left;width: 65px;}
+		.qiuzhi .first{border-bottom: 1px solid grey}
+
+		.dibu{width:1280px;margin: 0px auto; line-height: 20px;}
+		.xiayiye{text-align: center;margin-bottom: 20px}
+		.xiayiye span{border: 1px solid black;padding: 4px 8px;}
+		.xiayiye span a{text-decoration: none;color: black}
+		.xiayiye span:first-child{background: red;color: white;}
+		.xiayiye:after{width: 100%;display: block;clear: both;content:""}
+
+		
+		.dixia{background: url(images/bg_opacity.png);/* border: 1px solid red; */}
+		.dixia .ldixia p{float: left;font-size: 10px;color: #B1B1B1;margin-left: 20px;}
+		.dixia .rdixia{float: right;margin-right: 20px;}
+		.dixia:after{width: 100%;display: block;clear: both;content:""}
+
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+    <!-- 抬头 -->
+		<div class="title">
+			<div class="left left_box">
+				<p>晴 16-21℃&nbsp;&nbsp;2014年4月15日&nbsp;&nbsp;|&nbsp;&nbsp;Ctrl+D(收藏本页)</p>
+			</div>
+			<div class="right right_box">
+				<img src="images/weibo.png">新浪微博&nbsp;|&nbsp;<img src="images/weixin.png">公众微信
+				<img src="images/login.png">
+				<img src="images/register.png">
+			</div>
+		</div>
+	<!-- 标题 -->
+		<div class="biaoti">
+			<div class="logo">
+				<img src="images/logo.png">
+			</div>
+			<div class="search">
+				<th>
+					<td class="select">
+						<select>
+							<option value="zhannei">站内</option>
+							<option value="zhanwai">站外</option>
+						</select>
+					</td>
+					<td class="text">
+						<input type="text" name="keywords" value="请输入关键词">
+					</td>
+					<td class="button">
+						<input type="image" src="images/sousuo.png">
+					</td>
+				</th>
+			</div>
+		</div>
+	<!-- 导航 -->
+		<div class="nav">
+			<ul>
+				<li><a href="#">首页</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">报考信息</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">教育动态</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">缤纷校园</a></li>
+			</ul>	
+			<ul>
+				<li><a href="#">教育百科</a></li>
+			</ul>
+			<ul>
+				<li><a href="#">省内大学</a></li>
+			</ul>
+		    <ul>
+				<li><a href="#">教育论坛</a></li>
+			</ul>
+		</div>
+	<!-- 主体 -->
+		<div class="main">
+			<div class="top">
+				<div class="zuo">
+					<div class="shang">
+						<div class="laba">
+							<p><img src="images/laba.png">站内公告:</p>
+						</div>
+						<div class="wenzi">
+							<p>有3.5万人在这里接受学历教育&nbsp;&nbsp;联系人：XXX</p>
+						</div>
+					</div>
+					<div class="xia">
+						<img src="images/beijingtu.png">
+					</div>
+				</div>
+				<div class="you">
+					<div class="zuotu">
+						<a href="#"><img src="images/down_01.png"></a>
+						<a href="#"><img src="images/pro_03.png"></a>
+						<a href="#"><img src="images/house_05.png"></a>					
+					</div>
+					<div class="youtu">
+						<a href="#"><img src="images/work_02.png"></a>
+						<a href="#"><img src="images/student_04.png"></a>
+						<a href="#"><img src="images/team_06.png"></a>
+					</div>
+				</div>	
+			</div>
+
+				<div class="mleft">
+					<div class="mleft_top">
+						<div class="list_zi">
+							<div class="zuozi">
+								<p>缤纷校园</p>
+							</div>
+							<div class="youzi">
+								<p><a href="#">>>更多信息</a></p>
+							</div>
+						</div>
+						<div class="newlist">
+							<ul class="list">
+								<li>1、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>
+								<li>2、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>
+								<li>3、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>
+								<li>4、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>
+								<li>5、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>
+								<li>6、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>
+								<li>7、<a href="#">委员提议给公务员加薪</a><span>2014/01/12</span></li>				
+							</ul>
+						</div>
+					</div>
+					<div class="mleft_down">
+						<div class="2014">
+							<img src="images/gaokao.png">
+						</div>
+					</div>
+					<div class="lbottom">
+						<div class="lbzi">
+							<div class="lbl">
+								<p>教育培训</p>
+							</div>
+							<div class="lbr">
+								<p><a href="#">>>更多信息</a></p>
+							</div>
+						</div>
+						<div class="lbmain">
+							<ul>
+								<li class="bt"><span>1</span><a href="#">光华管理学院金融研修生班</a></li>
+								<li class="beizhu">时间:2014/04/15-2014/04/18</li>
+							</ul>
+							<ul>	
+								<li class="bt"><span>2</span><a href="#">现代企业供应链培训课程</a></li>
+								<li class="beizhu">主讲:雅成易</li>
+							</ul>
+							<ul>
+								<li class="bt"><span>3</span><a href="#">2041金融研究班成绩查询</a></li>
+								<li class="beizhu">时间:2014/08/22</li>
+							</ul>
+						</div>
+						<div class="lbdown">
+							<img src="images/point_red.png" width="10px" height="10px">
+							<img src="images/point_gray.png" width="10px" height="10px">
+							<img src="images/point_gray.png" width="10px" height="10px">
+						</div>
+						<div class="lbtu">
+							<div class="zltj">
+								<p>资料推荐</p>
+							</div>
+							<div class="lbtp">
+								<div class="lbtpz">
+									<img src="images/tj_01.png" height="105" width="220">
+								</div>
+								<div class="lbtpy">
+									<img src="images/point_gray.png" height="8" width="8" alt=""><br>
+									<img src="images/point_red.png" height="8" width="8" alt=""><br>
+									<img src="images/point_gray.png" height="8" width="8" alt=""><br>
+									<img src="images/point_gray.png" height="8" width="8" alt=""><br>
+									<img src="images/point_gray.png" height="8" width="8" alt=""><br>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mright">
+					<div class="mright_up">
+						<div class="xsjz">
+							<div class="word">
+								<p>学生兼职</p>
+							</div>
+							<div>
+								<ul class="example">
+									<li>
+										<span>·</span><a href="#">正月16大型招聘会,将在南京各高校举行</a>&nbsp;&nbsp;&nbsp;
+										<span>·</span><a href="#">正月16大型招聘会,将在南京各高校举行</a>
+									</li><hr>
+									<li>
+										<span>·</span><a href="#">正月16大型招聘会,将在南京各高校举行</a>&nbsp;&nbsp;&nbsp;
+										<span>·</span><a href="#">正月16大型招聘会,将在南京各高校举行</a>
+									</li><hr>
+								</ul>
+							</div>
+						</div>
+					</div>												
+					<div class="mright_down">
+						<div class="zhaopin">
+							<div class="zpbt">
+								<div class="btzuo">
+									<a href="">学生招聘/兼职</a>
+								</div>
+								<div class="btyou">
+									<a href="">学生招聘/求职</a>
+								</div>
+							</div>
+							<div class="zplist">
+								<table>
+									<tr>
+										<td class="fenlei">地域分类</td>
+										<td>
+											<select name="city">
+												<option value="nj" selected>南京市</option>
+											</select>
+											<select name="qu">
+												<option value="xzq">选择区</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td class="fenlei">职&nbsp;&nbsp;位</td>
+										<td class="xuanxiang">不限 家教 实习生 传单派发 礼仪 问卷调查 钟点工 翻译 设计制作 客服 餐厅服务员</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="xuanxiang">促销 会计 网站建设 其他兼职</td>
+									</tr>
+									<tr>
+										<td class="fenlei">结薪方式</td>
+										<td class="xuanxiang">不限 日结 月结 年结</td>
+									</tr>
+									<tr>
+										<td class="fenlei">薪&nbsp;&nbsp;酬</td>
+										<td class="xuanxiang">不限 1000元以下 1000-2000元 2000-3000元 3000-5000元 5000-8000元 8000-12000元</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td class="xuanxiang">20000元以上 面议</td>
+									</tr>
+								</table>								
+							</div>
+						</div>
+					</div>
+					<div class="qiuzhi">
+					<table>
+						<tr class="first">
+							<td class="xuhao">序号</td>
+							<td class="xuhao">求职职位</td>
+							<td class="xuhao">姓名</td>
+							<td class="xuhao">性别</td>
+							<td class="xuhao">联系方式</td>
+							<td class="xuhao">发布时间</td>
+						</tr>
+						<tr>
+							<td class="xuhao">1</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">2</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">3</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">4</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">5</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">6</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">7</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">8</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">9</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">10</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						<tr>
+							<td class="xuhao">11</td>
+							<td>会计</td>
+							<td>王珊</td>
+							<td>女</td>
+							<td>15879797979</td>
+							<td>2014/04/05</td>
+						</tr>
+						</table>
+					</div>
+				</div>			
+		</div>
+		<div class="dibu">
+			<div class="xiayiye">
+				<span><a href="#">1</a></span>
+				<span><a href="#">2</a></span>
+				<span><a href="#">3</a></span>
+				<span><a href="#">下一页</a></span>
+			</div>
+			<div class="dixia">
+				<div class="ldixia">					
+					<p>关于我们 | 服务条款 | 联系我们 | 人才招聘 | 广告服务 | 网站合作 | 教育黄页</p><br>
+					<p>Copyright 2008-2014 All Right Reserved.JSesu114.. 江苏教育黄页 版权所有</p><br>
+					<p>全国统一服务热线: 021-88888888 4006-448-118  上海市闵行区元江路5500路第一幢2208室 201199</p><br>
+					<p>苏ICP备11022999 上海城学文化传播有限公司旗下所有</p>
+				</div>
+				<div class="rdixia">
+					<img src="images/fr_01.png">
+					<img src="images/fr_02.png">
+					<img src="images/fr_05.png">
+					<img src="images/fr_04.png">
+				</div>
+
+			</div>
+		</div>
+
+			
+
+				
+
+
+
+
+
+    </body>
+</html>
